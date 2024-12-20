@@ -25,12 +25,15 @@
 
     # From Jeff
     undo = reset --soft HEAD^
+    s = status
+    b = branch
+    co = checkout
+    cob = checkout -b
     su = !git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD) $(git rev-parse --abbrev-ref HEAD)
     pbme = !git push -u $(whoami) $(git rev-parse --abbrev-ref HEAD)
-    pb = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
-    pblee = !git push -u allee $(git rev-parse --abbrev-ref HEAD)
+    po = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
     pbgrep = !git push -u grepinsight $(git rev-parse --abbrev-ref HEAD)
-    plb = !git pull origin $(git rev-parse --abbrev-ref HEAD)
+    plo = !git pull origin $(git rev-parse --abbrev-ref HEAD)
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     bhist = ! git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | head
 
